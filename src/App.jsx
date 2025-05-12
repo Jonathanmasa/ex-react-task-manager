@@ -1,13 +1,13 @@
 // import react router
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom"
-// import global context
-import { GlobalProvider } from "./context/GlobalContext"
 // import pages
 import TaskList from "./Pages/TaskList"
 import AddTask from "./Pages/AddTask"
+// import global context
+import { GlobalProvider } from "./context/GlobalContext"
 
 function App() {
- 
+  
   return (
     <GlobalProvider>
       <BrowserRouter>
