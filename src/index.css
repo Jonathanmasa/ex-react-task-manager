@@ -22,7 +22,8 @@ body {
   }
   
   nav a:hover {
-    color: #64b0d1;
+    background-color: #1699d1;
+    border-radius: 99999px;
   }
   
   nav a.active {
