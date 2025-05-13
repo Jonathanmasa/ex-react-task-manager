@@ -7,7 +7,7 @@ export function GlobalProvider({ children }) {
   const [Tasks, setTasks] = useState([]);
 
     useEffect(() => {
-        console.log("✅ VITE_API_URL:", VITE_API_URL); 
+         
         fetch(`${VITE_API_URL}/tasks`)
             .then(res => res.json())
             .then(data => setTasks(data))
