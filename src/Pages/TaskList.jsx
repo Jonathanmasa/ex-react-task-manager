@@ -3,8 +3,7 @@ import { GlobalContext } from "../context/GlobalContext";
 import TaskRow from "../Components/TaskRow";
 
 export default function TaskList() {
-    const {Tasks} = useContext(GlobalContext);
-    console.log(Tasks);
+    const { tasks } = useContext(GlobalContext);
 
     return (
             <div className="nav-content">
@@ -18,7 +17,7 @@ export default function TaskList() {
                         </tr>
                     </thead>
                     <tbody>
-                        {Tasks.map(task => (
+                        {tasks.map(task => (
                             <TaskRow key={task.id} task={task} />
                         ))}
                     </tbody>

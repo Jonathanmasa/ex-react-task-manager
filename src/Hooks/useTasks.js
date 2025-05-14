@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 const { VITE_API_URL } = import.meta.env;
 
-const [Tasks, setTasks] = useState([]);
-
-export default useTasks = () => {
+export default function useTasks(){
+    const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
          
@@ -14,6 +13,19 @@ export default useTasks = () => {
 
     }, []);
 
-    return { Tasks };
+    const addTask = () => {
+
+    }
+
+    const removeTask = () => {
+        
+    }
+
+    const updateTask = () => {
+        
+    }
+
+
+    return { tasks, setTasks, addTask, removeTask, updateTask };
 
 }
