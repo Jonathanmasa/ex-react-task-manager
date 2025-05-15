@@ -29,16 +29,20 @@ export default function useTasks(){
 
     }
 
-    const removeTask = async taskId => {
-        const response = fetch(`${VITE_API_URL}/tasks/${taskId}`, {
-            method: 'DELETE',
-        });
+    const removeTask = async (taskId) => {
+    const response = await fetch(`${VITE_API_URL}/tasks/${taskId}`, {
+        method: 'DELETE',
+    });
 
-        const { succes, message } = await response.json();
-        if(!succes) throw new Error(message);
-        setTasks(prevTasks => prevTasks.filter(task => task.id !== TaskDelete));
-        
+    const { success, message } = await response.json();
+
+    if (!success) {
+        throw new Error(message);
     }
+
+    setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId));
+};
+
 
     const updateTask = () => {
         
