@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom"
 // import pages
 import TaskList from "./Pages/TaskList"
 import AddTask from "./Pages/AddTask"
-import TaskDetail from "./Pages/TaskDetail"
+import TaskDetail from "./Pages/taskDetail"
 // import global context
 import { GlobalProvider } from "./context/GlobalContext"
 
