@@ -1,6 +1,17 @@
-import { useContext, useState, useMemo } from "react";
+import { useContext, useState, useMemo, useCallback } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import TaskRow from "../Components/TaskRow";
+
+// Funzione debounce
+function debounce(callback, delay) {
+  let timer;
+  return (value) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      callback(value);
+    }, delay);
+  };
+}
 
 export default function TaskList() {
   const { tasks } = useContext(GlobalContext);
@@ -8,14 +19,19 @@ export default function TaskList() {
   const [sortOrder, setSortOrder] = useState(1); // 1: asc, -1: desc
   const [searchQuery, setSearchQuery] = useState("");
 
+  const debouncedSetSearchQuery = useCallback(
+    debounce(setSearchQuery, 500),
+    []
+  );
+
   const sortIcon = sortOrder === 1 ? "↓" : "↑";
 
   const handleSort = (field) => {
     if (sortBy === field) {
-      setSortOrder((prev) => prev * -1); // toggle order
+      setSortOrder((prev) => prev * -1); // inverti ordine
     } else {
       setSortBy(field);
-      setSortOrder(1); // reset to ascending
+      setSortOrder(1); // resetta a crescente
     }
   };
 
@@ -39,7 +55,8 @@ export default function TaskList() {
             break;
           case "createdAt":
             comparison =
-              new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+              new Date(a.createdAt).getTime() -
+              new Date(b.createdAt).getTime();
             break;
           default:
             break;
@@ -55,8 +72,7 @@ export default function TaskList() {
       <input
         type="text"
         placeholder="Cerca..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
+        onChange={(e) => debouncedSetSearchQuery(e.target.value)}
         className="search-input"
       />
       <table>
