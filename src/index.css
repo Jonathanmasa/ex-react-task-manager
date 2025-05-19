@@ -129,9 +129,11 @@ nav a.active {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
+    
 }
 
 .modal-buttons button {
+    
     padding: 0.6rem 1rem;
     font-size: 1rem;
     font-weight: 600;
@@ -321,6 +323,7 @@ textarea {
 button {
     display: inline-block;
     width: 100%;
+    margin: 5px;
     padding: 0.75rem 1rem;
     font-size: 1rem;
     font-weight: 600;
