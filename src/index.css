@@ -50,6 +50,126 @@ nav a.active {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* Vista Dettaglio Task */
+.task-detail {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.task-detail h1 {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.task-detail h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.task-detail p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0.75rem;
+}
+
+.task-detail strong {
+    font-weight: 600;
+}
+
+.task-detail button {
+    margin-top: 1.5rem;
+    width: auto;
+    padding: 0.75rem 1.5rem;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 90%;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #222;
+}
+
+.modal p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.modal-buttons button {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-buttons button:first-child {
+    background-color: #ccc;
+    color: #333;
+}
+
+.modal-buttons button:last-child {
+    background-color: #d9534f;
+    color: white;
+}
+
+.modal-buttons button:first-child:hover {
+    background-color: #b3b3b3;
+}
+
+.modal-buttons button:last-child:hover {
+    background-color: #c9302c;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 /* Titolo e paragrafi */
 h1 {
     font-size: 2rem;
@@ -89,21 +209,24 @@ tbody tr:hover {
     cursor: pointer;
 }
 
-/* Status dinamico  */
+/* Status dinamico */
 .status {
     font-weight: bold;
 }
 
 td.done {
     background-color: green;
+    color: white;
 }
 
-td.doing{
+td.doing {
     background-color: orange;
+    color: white;
 }
 
 td.todo {
     background-color: red;
+    color: white;
 }
 
 /* Responsive Design */
@@ -142,6 +265,7 @@ td.todo {
     }
 }
 
+/* Form */
 form {
     max-width: 500px;
     margin: 2rem auto;
@@ -220,4 +344,3 @@ button:disabled {
     cursor: not-allowed;
     box-shadow: none;
 }
-

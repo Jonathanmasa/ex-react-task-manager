@@ -17,8 +17,6 @@ export default function Modal({ title, content, show, onClose, onConfirm, confir
         </div>,
         document.body
     )
-    return (
-        <div></div>
-    )
+    
 
 }

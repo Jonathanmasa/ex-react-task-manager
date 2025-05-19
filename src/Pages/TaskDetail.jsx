@@ -32,7 +32,7 @@ export default function TaskDetail() {
     }
 
     return (
-        <div>
+        <div className="task-detail">
             <h1>Dettaglio Task</h1>
             <h2>{task.title}</h2>
             <p><strong>{task.description}</strong></p>
@@ -40,7 +40,6 @@ export default function TaskDetail() {
             <p><strong>Creato il: {new Date(task.createdAt).toLocaleDateString()}</strong></p>
             <button onClick={() => setShowModal(true)}>Delete Task</button>
 
-            
             <Modal
                 title="Conferma eliminazione"
                 content="Sei sicuro di voler eliminare questa task?"
@@ -49,7 +48,7 @@ export default function TaskDetail() {
                 onConfirm={handleDelete}
                 confirmText="Elimina"
             />
-
         </div>
+
     );
 }
